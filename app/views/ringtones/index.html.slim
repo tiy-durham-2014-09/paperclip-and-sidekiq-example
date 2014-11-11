@@ -1,0 +1,7 @@
+.row
+  h1.large-12.columns Ringtones
+.row
+  .medium-block-grid-2
+  ul
+    - @ringtones.each do |ringtone|
+      = link_to ringtone.name, ringtone
