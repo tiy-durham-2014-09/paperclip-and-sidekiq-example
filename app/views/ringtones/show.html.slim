@@ -1,9 +1,12 @@
 .small-12.columns
   h2 = @ringtone.name
 
-  div = render partial: "audio", locals: { ringtone: @ringtone }
+  - if @ringtone.processing?
+    div This ringtone is still processing.
+  - else
+    div = render partial: "audio", locals: { ringtone: @ringtone }
 
-  h3 Formats
-  ul
-    li = link_to "Android", @ringtone.url(:android)
-    li = link_to "iPhone", @ringtone.url(:iphone)
+    h3 Formats
+    ul
+      li = link_to "Android", @ringtone.url(:android)
+      li = link_to "iPhone", @ringtone.url(:iphone)

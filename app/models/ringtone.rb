@@ -22,4 +22,17 @@ class Ringtone < ActiveRecord::Base
   def create_ringtone
     RingtoneCropWorker.perform_async(id)
   end
+
+  rails_admin do
+    list do
+      field :artist
+      field :song
+      field :ringtone do
+        pretty_value do
+          bindings[:view].tag(:audio, { :controls => "", :src => bindings[:object].url(:android) })
+        end
+      end
+      field :processing
+    end
+  end
 end
