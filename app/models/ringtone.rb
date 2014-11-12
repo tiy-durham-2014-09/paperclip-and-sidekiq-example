@@ -1,4 +1,6 @@
 class Ringtone < ActiveRecord::Base
+  has_paper_trail
+
   validates :song, presence: true
 
   has_attached_file :source

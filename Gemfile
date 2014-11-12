@@ -45,7 +45,7 @@ gem "sinatra"
 gem "flutie"
 gem "foreman", require: false
 gem "rails_admin"
-
+gem 'paper_trail', '~> 3.0.6'
 
 
 
