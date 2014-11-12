@@ -1,0 +1,49 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background: asset-url("mobilz.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+
+  a {
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      color: antiquewhite;
+    }
+  }
+}
+
+.main {
+  background-color: rgba(255,255,255,0.85);
+  border: 10px solid white;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.backgrounds {
+  figure {
+    text-align: center;
+  }
+
+  img {
+    border: 1px solid grey;
+    padding: 3px;
+    border-radius: 2px;
+  }
+}
+
+

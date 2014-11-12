@@ -1,0 +1,9 @@
+<div class="small-12 columns">
+  <h2>Upload a new background</h2>
+  <%= simple_form_for @background do |f| %>
+    <%= f.input :title %>
+    <%= f.input :image, label: false %>
+    <%= f.button :submit, class: "radius" %>
+  <% end %>
+</div>
+

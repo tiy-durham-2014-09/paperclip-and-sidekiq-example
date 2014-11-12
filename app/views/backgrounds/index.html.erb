@@ -1,0 +1,15 @@
+<div class="small-12 columns">
+  <h2>
+    Backgrounds
+    <small><%= link_to "Add a new background", new_background_path %></small>
+  </h2>
+
+  <% if @backgrounds.present? %>
+    <ul class="small-block-grid-3 backgrounds">
+      <%= render @backgrounds %>
+    </ul>
+  <% else %>
+    There are no backgrounds yet! Be the first to
+    <%= link_to "add one", new_background_path %>!
+  <% end %>
+</div>

@@ -1,8 +1,9 @@
-.row
-  .large-12.columns
-    h1 = @ringtone.name
-    ul
-      li = link_to "Android", @ringtone.url(:android)
-      li = link_to "iPhone", @ringtone.url(:iphone)
+.small-12.columns
+  h2 = @ringtone.name
 
-    p = link_to "Return to all ringtones", ringtones_path
+  div = render partial: "audio", locals: { ringtone: @ringtone }
+
+  h3 Formats
+  ul
+    li = link_to "Android", @ringtone.url(:android)
+    li = link_to "iPhone", @ringtone.url(:iphone)

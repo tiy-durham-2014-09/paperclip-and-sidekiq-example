@@ -1,7 +1,6 @@
-.row
-  h1.large-12.columns Ringtones
-.row
-  .medium-block-grid-2
-  ul
-    - @ringtones.each do |ringtone|
-      = link_to ringtone.name, ringtone
+.small-12.columns
+  h2
+    ' Ringtones
+    small = link_to "Create a new ringtone", new_ringtone_path
+
+  = render @ringtones

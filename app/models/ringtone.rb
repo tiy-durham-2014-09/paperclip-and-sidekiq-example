@@ -1,4 +1,6 @@
 class Ringtone < ActiveRecord::Base
+  validates :song, presence: true
+
   has_attached_file :source
   validates_attachment_content_type :source, :content_type => /\Aaudio\/(x-)?(mpeg|mp3)/
 
@@ -12,7 +14,6 @@ class Ringtone < ActiveRecord::Base
 
   after_commit :create_ringtone, on: :create
 
-  validates :song, presence: true
 
   def name
     [song, artist].compact.join(" - ")

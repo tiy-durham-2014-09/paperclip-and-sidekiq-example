@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="<%= body_class %>">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : page_title %></title>
 
+    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic,300italic,300" %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-
-    <%= yield %>
+    <div class="row">
+      <h1 class="small-12 columns"><%= link_to "Mobilz", root_path %></h1>
+    </div>
+    <div class="row main">
+      <%= yield %>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
