@@ -59,5 +59,6 @@ end
 group :test do
   gem "rake", "10.3.2"
   gem "shoulda"
-  gem 'simplecov', :require => false
+  gem 'simplecov', require: false
+  gem "codeclimate-test-reporter", require: false
 end
