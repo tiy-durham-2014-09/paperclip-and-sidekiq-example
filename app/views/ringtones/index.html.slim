@@ -3,4 +3,4 @@
     ' Ringtones
     small = link_to "Create a new ringtone", new_ringtone_path
 
-  = render @ringtones
+  = render partial: "mini", collection: @ringtones

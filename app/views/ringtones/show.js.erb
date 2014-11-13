@@ -1,0 +1,7 @@
+<% if @ringtone.processing? %>
+  setTimeout(function () {
+    $.getScript("<%= ringtone_path(@ringtone) %>");
+  }, 3000);
+<% else %>
+  $(".ringtone").html("<%= j(render @ringtone) %>");
+<% end %>
