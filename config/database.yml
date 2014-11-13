@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: paperclip-and-sidekiq-example_production
-  username: paperclip-and-sidekiq-example
-  password: <%= ENV['PAPERCLIP-AND-SIDEKIQ-EXAMPLE_DATABASE_PASSWORD'] %>
