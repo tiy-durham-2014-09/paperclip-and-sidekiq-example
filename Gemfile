@@ -57,6 +57,7 @@ group :development, :test do
 end
 
 group :test do
+  gem "rake", "10.3.2"
   gem "shoulda"
   gem 'simplecov', :require => false
 end

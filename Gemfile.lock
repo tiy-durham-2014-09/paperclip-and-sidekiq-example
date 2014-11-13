@@ -254,6 +254,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.1.7)
   rails_admin
+  rake (= 10.3.2)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   shoulda
