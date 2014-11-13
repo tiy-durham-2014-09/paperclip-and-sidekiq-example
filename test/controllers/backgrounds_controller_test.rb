@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RingtonesControllerTest < ActionController::TestCase
+class BackgroundsControllerTest < ActionController::TestCase
   context "GET :index" do
     setup { get :index }
 
@@ -10,8 +10,8 @@ class RingtonesControllerTest < ActionController::TestCase
 
   context "GET :show" do
     setup do
-      @ringtone = create(:ringtone)
-      get :show, id: @ringtone
+      @background = create(:background)
+      get :show, id: @background
     end
 
     should respond_with(:ok)
@@ -28,25 +28,25 @@ class RingtonesControllerTest < ActionController::TestCase
   context "POST :create" do
     context "with valid params" do
       setup do
-        params = { ringtone: { song: "Ringtone", artist: "The Toners",
-                               source: fixture_file_upload('files/test.mp3', 'audio/mp3') } }
+        params = { background: { title: "a background",
+                                 image: fixture_file_upload('files/cool-dude.jpg', 'image/jpeg') } }
         post :create, params
       end
 
-      should "create a new ringtone" do
-        ringtone = assigns[:ringtone]
-        assert_not_nil ringtone
-        assert ringtone.persisted?
+      should "create a new background" do
+        background = assigns[:background]
+        assert_not_nil background
+        assert background.persisted?
       end
 
-      should "redirect to new ringtone" do
-        assert_redirected_to assigns[:ringtone]
+      should "redirect to new background" do
+        assert_redirected_to assigns[:background]
       end
     end
 
     context "with invalid params" do
       setup do
-        post :create, ringtone: { song: "" }
+        post :create, background: { title: "" }
       end
 
       should render_template(:new)

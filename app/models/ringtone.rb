@@ -4,6 +4,7 @@ class Ringtone < ActiveRecord::Base
   validates :song, presence: true
 
   has_attached_file :source
+  validates_attachment_presence :source
   validates_attachment_content_type :source, :content_type => /\Aaudio\/(x-)?(mpeg|mp3)/
 
   has_attached_file :ringtone,
@@ -16,7 +17,6 @@ class Ringtone < ActiveRecord::Base
 
   after_commit :create_ringtone, on: :create
 
-
   def name
     [song, artist].compact.join(" - ")
   end
@@ -25,6 +25,7 @@ class Ringtone < ActiveRecord::Base
     RingtoneCropWorker.perform_async(id)
   end
 
+  #:nocov:
   rails_admin do
     list do
       field :artist

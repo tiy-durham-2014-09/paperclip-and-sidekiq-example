@@ -12,6 +12,7 @@ class Background < ActiveRecord::Base
                                         :medium => "640x960#",
                                         :small => "320x480#",
                                         :thumb => "160x240#"}
+  validates_attachment_presence :image
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   delegate :url, to: :image

@@ -36,23 +36,27 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem "devise"
-gem "paperclip", "~> 4.2"
-gem "sidekiq"
-gem "foundation-rails"
-gem "simple_form"
-gem "slim"
-gem "sinatra"
 gem "flutie"
 gem "foreman", require: false
-gem "rails_admin"
+gem "foundation-rails"
 gem 'paper_trail', '~> 3.0.6'
-
-
+gem "paperclip", "~> 4.2"
+gem "rails_admin"
+gem "sidekiq"
+gem "simple_form"
+gem "sinatra"
+gem "slim"
 
 gem "quiet_assets", group: :development
 group :development, :test do
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'factory_girl_rails'
   gem "faker"
   gem "pry-rails"
+end
+
+group :test do
+  gem "shoulda"
+  gem 'simplecov', :require => false
 end
